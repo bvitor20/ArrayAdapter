@@ -1,14 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.com.example.brunovitor.lwarrray.DetalheActivityFilms"
     >
 
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
         android:id="@+id/imageView_logo"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -18,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Ano"
         android:id="@+id/textView_ano"
-        android:layout_below="@+id/imageView_logo"
+        android:layout_below="@+id/textView_name"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -27,6 +30,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nome"
         android:id="@+id/textView_name"
-        android:layout_below="@+id/textView_ano"
+        android:layout_below="@+id/imageView_logo"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -21,27 +21,34 @@ public class FilmesAdapter extends ArrayAdapter<Filmes>{
 
     }
     @Override
-    public View getView(int posicao, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent){
 
-        //Implementando uma View
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.film_item, null);
+        ViewHolder viewHolder;
+        Filmes film = getItem(position);
 
-        //Pegando a posição
-        Filmes film = getItem(posicao);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.film_item, null);
 
-
-        //Configurando os dados no Layout
-        ImageView imgLogo = (ImageView) view.findViewById(R.id.img_logo_film);
-        TextView txtAnoFilm = (TextView) view.findViewById(R.id.textView_ano);
-        TextView txtNome = (TextView) view.findViewById(R.id.textView_name);
-
-        imgLogo.setImageResource(Util.getLogo(film.filmId));
-        txtAnoFilm.setText(film.anoFilm);
-        txtNome.setText(film.nomeFilm);
-
+            viewHolder = new ViewHolder();
+            viewHolder.imgLogo = (ImageView) convertView.findViewById(R.id.img_logo_film);
+            viewHolder.txtNome = (TextView) convertView.findViewById(R.id.textView_name);
+            viewHolder.txtAnoFilm = (TextView) convertView.findViewById(R.id.textView_ano);
+            convertView.setTag(viewHolder);
+        }else{
+            viewHolder = (ViewHolder)convertView.getTag();
+        }
+        viewHolder.imgLogo.setImageResource(Util.getLogo(film.filmId));
+        viewHolder.txtAnoFilm.setText(film.anoFilm);
+        viewHolder.txtNome.setText(film.nomeFilm);
 
         //Retornando a view
-        return view;
+        return convertView;
     }
+    static class ViewHolder {
+        ImageView imgLogo;
+        TextView txtAnoFilm;
+        TextView txtNome;
 
+    }
 }

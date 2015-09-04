@@ -6,15 +6,17 @@
     <ImageView
         android:layout_width="72dp"
         android:layout_height="72dp"
-
-        android:id="@+id/img_logo_film" />
+        android:id="@+id/img_logo_film"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ano"
         android:id="@+id/textView_ano"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/textView_name"
         android:layout_toRightOf="@+id/img_logo_film"
         android:layout_toEndOf="@+id/img_logo_film" />
 
@@ -24,7 +26,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nome"
         android:id="@+id/textView_name"
-        android:layout_below="@+id/textView_ano"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/img_logo_film"
         android:layout_toEndOf="@+id/img_logo_film" />
 </RelativeLayout>
